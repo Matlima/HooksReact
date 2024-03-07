@@ -3,6 +3,7 @@
 // import { CounterContext } from "../context/CounterContext";
 
 import HookUseState from "../components/HookUseState";
+import HookUseReducer from "../components/HookUseReducer"
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
     <div>
       <h1>Home</h1>
       <HookUseState />
+      <HookUseReducer />
     </div>
   );
 }
