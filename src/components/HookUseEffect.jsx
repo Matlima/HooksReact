@@ -27,6 +27,16 @@ const HookUseEffect = () => {
         }
     }, [anotherNumber]);
 
+    // 4 - cleanup do useEffect
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            console.log("Hello World");
+            setAnotherNumber(anotherNumber + 1);
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, [anotherNumber]);
+
+
   return (
     <div>
         <h2>UseEffect</h2>
@@ -34,6 +44,7 @@ const HookUseEffect = () => {
         <button onClick={changeSomething}>Executor</button>
         <p>Another Number: {anotherNumber}</p>
         <button onClick={() => setAnotherNumber(anotherNumber + 1)}>Mudar o another</button>
+        <hr />
     </div>
   )
 }
